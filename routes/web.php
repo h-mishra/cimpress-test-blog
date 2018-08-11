@@ -12,12 +12,8 @@
 */
 
 
-Route::get('/','BlogController@publicIndex');
-
-Route::get('/blog/{id}','BlogController@view');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('/blog/index','BlogController@index');
@@ -29,6 +25,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::post('/blog/submitBlog','BlogController@saveBlog');
 	Route::delete('/blog/destroy/{id}','BlogController@destroy');
 });
+
+Route::get('/','BlogController@publicIndex');
+
+Route::get('/blog/{id}','BlogController@viewIndex');
 
 
 

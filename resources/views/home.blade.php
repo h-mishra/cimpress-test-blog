@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome To Blog Post.
+					<a href="{{url('blog/create')}}" class="btn btn-xs btn-success"> Crete Blog</a>
                 </div>
             </div>
         </div>

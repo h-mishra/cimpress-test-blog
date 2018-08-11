@@ -70,4 +70,9 @@ class BlogController extends Controller
 		$blogs = Blog::with('user')->get();
         return view('blog.public_index',compact('blogs'));
 	}
+	
+	public function viewIndex($id){
+		$blog = Blog::where('id', $id)->with('user')->first();
+		return view('blog.blog', compact('blog', 'id'));
+	}
 }
